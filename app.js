@@ -1,6 +1,6 @@
 console.log("link test")
 const app = {
-    intit: function(selectors) {
+    intit(selectors) {
         this.max = 0
         this.list = document.querySelector(selectors.listSelect)
 
@@ -9,7 +9,7 @@ const app = {
             .addEventListener('submit', this.handleSubmit.bind(this))
     },
 
-    handleSubmit: function(ev) {
+    handleSubmit(ev) {
         ev.preventDefault()
         const form = ev.target
         const flick = {
@@ -19,11 +19,11 @@ const app = {
 
         const listItem = this.renderListItem(flick)
         this.list.appendChild(listItem)
-        
+
         this.max ++    
     },
 
-    renderListItem: function(flick) {
+    renderListItem(flick) {
         const item = document.createElement('li')
         item.textContent = flick.name
         return item
