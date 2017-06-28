@@ -1,9 +1,11 @@
 console.log("link test")
 const app = {
-    intit: function(formSelect) {
+    intit: function(selectors) {
         this.max = 0
+        this.list = document.querySelector(selectors.listSelect)
+
         document
-            .querySelector(formSelect)
+            .querySelector(selectors.formSelect)
             .addEventListener('submit', this.handleSubmit.bind(this))
     },
 
@@ -15,8 +17,19 @@ const app = {
             id: this.max + 1,
         }
 
-        console.log(flick)
+        const listItem = this.renderListItem(flick)
+        this.list.appendChild(listItem)
+        
         this.max ++    
     },
+
+    renderListItem: function(flick) {
+        const item = document.createElement('li')
+        item.textContent = flick.name
+        return item
+    },
 }
-app.intit('form#flick-form')
+app.intit({
+    formSelect: 'form#flick-form', 
+    listSelect: '#flick-list',
+})
