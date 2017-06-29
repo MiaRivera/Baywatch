@@ -7,14 +7,27 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Stalinist One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
     <link rel="stylesheet" href="app.css">
   </head>
+
+  <style>
+    body {
+        background-image: url("http://thehypedgeek.com/wp-content/uploads/2017/06/Michael-Bay.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+  </style>
 
   <body>
     <div class="grid-x">
 
         <div class="medium-8 medium-offset-2 cell">
-            <h1>Welcome to the Michael Baywatch</h1>
+            <h1 style="font-family: Stalinist One; text-align: center;">Welcome to The</h1>
+            <h1 style="font-family: Stalinist One; text-align: center;">Michael Baywatch</h1>
+
             <form id="flick-form">
                 <div class="input-group">
                     <input 
@@ -30,7 +43,7 @@
         </div>
 
         <div class="medium-8 medium-offset-2 cell">
-            <ul id="flick-list"></ul>
+            <ul id="flick-list" style="font-family: Volkhov; font-size: 20px; background: rgba(255, 255, 255, .3)"></ul>
         </div>
     </div>
     <script src="app.js"></script>

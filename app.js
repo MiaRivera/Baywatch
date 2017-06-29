@@ -33,6 +33,9 @@ const app = {
         const item = document.createElement('li')
         item.id = this.max
         item.textContent = flick.name
+        item.style.marginBottom = "10px"
+
+        item.appendChild(this.makeRemoveButton())
 
         //TODO add a favorite button to each item, causes a change of appearance
         const favButton = document.createElement('BUTTON')
@@ -40,13 +43,14 @@ const app = {
         favButton.innerHTML = "<img src=\"https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/keditbookmarks.png\"/>"
         favButton.style.width = "2rem"
         favButton.style.height = "1rem"
+        favButton.style.cssFloat = "right"
         item.appendChild(favButton)
 
         favButton.addEventListener('click', function() {
             const line = document.getElementById(favButton.id)
             
             if(line.style.backgroundColor === "yellow") {
-                line.style.backgroundColor = "white"
+                line.style.backgroundColor = "rgba(255, 255, 255, .3)"
             } else {
                 line.style.backgroundColor = "yellow"
             }
@@ -59,8 +63,6 @@ const app = {
             // }
         })
 
-       item.appendChild(this.makeRemoveButton())
-
         return item
     },
 
@@ -71,6 +73,7 @@ const app = {
         remButton.style.width = "2rem"
         remButton.style.height = "1rem"
         remButton.id = this.max
+        remButton.style.cssFloat = "right"
 
         remButton.addEventListener('click', function() {
             const line = document.getElementById(remButton.id)
