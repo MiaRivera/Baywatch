@@ -35,10 +35,9 @@ const app = {
         item.textContent = flick.name
 
         //TODO add a favorite button to each item, causes a change of appearance
-        //     also affects array (change fav status)
         const favButton = document.createElement('BUTTON')
         favButton.id = this.max
-        favButton.innerHTML = "<img src=\"https://upload.wikimedia.org/wikipedia/commons/7/79/Operation_Upshot-Knothole_-_Badger_001.jpg\"/>"
+        favButton.innerHTML = "<img src=\"https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/keditbookmarks.png\"/>"
         favButton.style.width = "2rem"
         favButton.style.height = "1rem"
         item.appendChild(favButton)
@@ -60,11 +59,29 @@ const app = {
             // }
         })
 
-        //TODO add a remove button to each item, remove from list and array
+       item.appendChild(this.makeRemoveButton())
 
         return item
     },
 
+     //TODO add a remove button to each item, remove from list and array
+    makeRemoveButton() {
+        const remButton = document.createElement('BUTTON')
+        remButton.innerHTML = "<img src=\"https://upload.wikimedia.org/wikipedia/commons/7/79/Operation_Upshot-Knothole_-_Badger_001.jpg\"/>"
+        remButton.style.width = "2rem"
+        remButton.style.height = "1rem"
+        remButton.id = this.max
+
+        remButton.addEventListener('click', function() {
+            const line = document.getElementById(remButton.id)
+            line.remove()
+
+            // this.flicks.splice(remButton.id - 1, 1)
+            // console.log(this.flicks)
+        })
+
+        return remButton
+    },
     // changeFav() {
     //     console.log(this.flicks)
     //     console.log(this.favButton.id)
